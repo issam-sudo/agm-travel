@@ -10,6 +10,8 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
@@ -20,6 +22,7 @@
       "es2018",
       "dom"
     ]
+   
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

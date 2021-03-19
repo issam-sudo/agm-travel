@@ -1,0 +1,182 @@
+<div class="sequence">
+    <div class="seq-preloader">
+        <svg width="39" height="16" viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg" class="seq-preload-indicator">
+      <g fill="#F96D38">
+        <path
+          class="seq-preload-circle seq-preload-circle-1"
+          d="M3.999 12.012c2.209 0 3.999-1.791 3.999-3.999s-1.79-3.999-3.999-3.999-3.999 1.791-3.999 3.999 1.79 3.999 3.999 3.999z"
+        />
+        <path
+          class="seq-preload-circle seq-preload-circle-2"
+          d="M15.996 13.468c3.018 0 5.465-2.447 5.465-5.466 0-3.018-2.447-5.465-5.465-5.465-3.019 0-5.466 2.447-5.466 5.465 0 3.019 2.447 5.466 5.466 5.466z"
+        />
+        <path
+          class="seq-preload-circle seq-preload-circle-3"
+          d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.332s-7.332 3.283-7.332 7.332c0 4.05 3.283 7.332 7.332 7.332z"
+        />
+      </g>
+    </svg>
+    </div>
+</div>
+
+<div class="logo">
+    <h1>Agm Travel Marker</h1>
+</div>
+<nav>
+    <ul>
+        <li>
+            <a href="#1"><img src="https://img.icons8.com/wired/48/ffffff/map.png" /><em>Demo</em
+        ></a
+      >
+    </li>
+    <li>
+      <a href="#2"
+        ><img src="https://img.icons8.com/nolan/48/ffffff/about.png" />
+        <em>About TravelMarker</em></a>
+        </li>
+        <li>
+            <a href="#3"><img src="https://img.icons8.com/ios-filled/48/ffffff/view-module.png" />
+                <em>Modules</em></a>
+        </li>
+    </ul>
+</nav>
+
+<div class="slides">
+    <div class="slide" id="1">
+        <div id="slider-wrapper">
+            <div class="controls">
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="play()">
+          Play
+        </button>
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="pause()">
+          Pause
+        </button>
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="reset()">
+          Reset
+        </button>
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="next()">
+          Next
+        </button>
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="prev()">
+          Previous
+        </button>
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="fast()">
+          Fast
+        </button>
+
+                <button type="button" class="btn btn-outline-warning mr-1" (click)="slow()">
+          Slow
+        </button>
+                <button id="speed" type="button" class="btn btn-outline-warning">
+          {{ speedMultiplier }}x
+        </button>
+            </div>
+
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapReady)="onMapReady($event)">
+                <div *ngIf="markerShow">
+                    <agm-marker *ngFor="let location of locations" [iconUrl]="mapIcon" [latitude]="location[0]" [longitude]="location[1]"></agm-marker>
+                </div>
+            </agm-map>
+
+            <div id="thumbnail">
+                <ul>
+                    <li (click)="onShowMarkersTrue()" class="active">
+                        <img src="assets/images/thumb-01.jpg" alt="Earth" />
+                    </li>
+                    <li (click)="onShowMarkersFalse()">
+                        <img src="assets/images/thumb-02.jpg" alt="Meeting" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slide" id="2">
+        <div class="content second-content">
+            <div id="tabs">
+                <ul>
+                    <li>
+                        <a href="#tabs-1"><span class="fa fa-align-justify"></span></a>
+                    </li>
+                    <li>
+                        <a href="#tabs-2"><span class="fa fa-asterisk"></span></a>
+                    </li>
+                    <li>
+                        <a href="#tabs-3"><span class="fa fa-align-left"></span></a>
+                    </li>
+                </ul>
+                <section class="tabs-content">
+                    <article id="tabs-1">
+                        <h2>Travel Marker</h2>
+                        <span>google maps library to replay gps locations with animations</span
+            >
+          </article>
+          <article id="tabs-2">
+            <h2>Features</h2>
+            <span>Animation Controls</span>
+                        <p>
+                            An out-of-box solution with minimum configuration. <br /> Compute intermediate gps points for smooth animation <br /> Animation Controls <br /> Play/Pause <br /> Next/Previous <br /> Fast-Forward/Rewind <br /> Reset <br />                            Listen marker events like touch,mouseover etc. <br /> Listen Animation events like paused,finished etc. <br />
+                        </p>
+                    </article>
+                    <article id="tabs-3">
+                        <h2>Installation</h2>
+
+                        <p><b> npm install travel-marker </b></p>
+                        <p>Or</p>
+                        <p>
+                            <b>script
+                src="https://unpkg.com/travel-marker/dist/travel-marker.umd.js"
+                async</b
+              >
+            </p>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="slide" id="3">
+    <div class="content third-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="owl-carousel owl-theme">
+            <div class="col-md-12">
+              <div class="featured-item">
+                <a href=""><img src="assets/images/item-01.jpg" alt="" /></a>
+                <div class="down-content">
+                  <h4>Marker Options</h4>
+                  <h6>travel marker</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="featured-item">
+                <a href=""><img src="assets/images/item-02.jpg" alt="" /></a>
+                <div class="down-content">
+                  <h4>Travel Data</h4>
+                  <h6>travel marker</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="featured-item">
+                <img src="assets/images/item-03.jpg" alt="" />
+                <div class="down-content">
+                  <h4>Event Type</h4>
+                  <h6>travel marker</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="featured-item">
+                <img src="assets/images/item-04.jpg" alt="" />
+                <div class="down-content">
+                  <h4>Travel Events</h4>
+                  <h6>travel marker</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
