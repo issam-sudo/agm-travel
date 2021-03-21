@@ -23,7 +23,7 @@ import { environment } from '../environments/environment';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAkCkK4N39fnuq86Fk0risyGhA8rMRBkZU'
     }),
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({   positionClass: 'toast-bottom-left', progressBar: true}),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

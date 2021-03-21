@@ -1,10 +1,11 @@
 agm-map {
-    height: 640px;
+    height: 1000px;
 }
 
 .controls {
     position: absolute;
     z-index: 999;
-    top: 20px;
+    top: 20%;
     right: 8%;
+    display: grid;
 }
